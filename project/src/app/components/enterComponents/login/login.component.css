@@ -1,0 +1,36 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    direction: rtl;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  direction: rtl;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ but I'm not sure about working */
+  direction: rtl;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  direction: rtl;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+.center2{
+  /* display: block; */
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+width: 50%;
+}
+.myFont{
+    text-align: right;
+}

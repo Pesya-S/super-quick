@@ -1,0 +1,108 @@
+<!-- <p>buying works!</p>
+<ul>
+    <li *ngFor="let item of selectedAlias">{{item.TextAlias}}</li>
+  </ul> -->
+<div style="background-color: white; max-height: 60vh;">
+  <form class="example-form" >
+    <div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin">
+        <header class="w3-container w3-light-grey w3-padding-16">
+            <h3 style="text-align: center">רשימת הקניות שלי</h3>
+          </header>
+          <ul class="w3-ul">
+              <li *ngFor="let x of selectedAlias; let i=index"   class="w3-padding-tiny" style="text-align: right;  " [ngStyle]="{'Color':selectedAlias[i].Color}"> {{x.TextAlias}} {{selectedAlias[i].Color}}         <span (click)="removeItem(i)" style="padding-left: 3%; cursor:pointer; color: orange;" class="w3-right w3-margin-right">×</span></li>
+            </ul>
+            <div class="w3-container w3-light-grey w3-padding-16">
+
+
+    
+                <div layout="row" layout-wrap layout-align="center center" class="w3-row w3-margin-top row">
+
+
+
+
+                  <div class="w3-col s10 col col-lg-9">
+                    <!-- השלמה אוטומטית -->
+        <mat-form-field class="example-full-width">
+            <input matInput
+                   placeholder="בחר מוצר"
+                   aria-label="alias"
+                   #aliasInput
+                   style="text-align: right"
+                   [matAutocomplete]="auto"
+                   [formControl]="aliasCtrl"
+                   [(ngModel)]="textP"
+                   (keydown)="onKeydown($event)"
+                   >
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)='addItem($event.option.value)' [displayWith]="displayNull" >
+              <mat-option *ngFor="let a of filteredAlias | async" [value]="a.TextAlias" >
+                <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+                <span>{{a.TextAlias}}</span>
+                <!-- <small>Population: {{state.population}}</small> -->
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          
+
+          <div class="row parent">
+            <div class="child" style="padding: 3%;">
+      <!-- <button (click)="sendProducts()" class="w3-btn w3-padding w3-green" >חשב מסלול</button>
+      <button (click)="sendProducts()" class="w3-btn w3-padding w3-green" >קניה חדשה</button> -->
+      <mat-button-toggle-group class="font child" name="fontStyle" aria-label="Font Style" class="center" style="border: white;">
+        <mat-button-toggle class="font" color="orange" value="bold" (click)="sendProducts()" style="background-color: orange; border: white;">חשב מסלול</mat-button-toggle>
+        <mat-button-toggle class="font" value="italic" (click)="restart()"  style="background-color: rgb(167, 157, 139); border: white;">קניה חדשה</mat-button-toggle>
+      </mat-button-toggle-group>  
+            </div>
+          </div>   
+
+          <!-- עד כאן השלמה אוטומטית -->
+                    <!-- <input placeholder="Add shopping items here" [(ngModel)]="addMe" class="w3-input w3-border w3-padding"> -->
+                  </div>
+
+</div>
+                <p class="w3-text-red">{{errortext}}</p>
+              </div>
+            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- השלמה אוטומטית -->
+     <!--   <mat-form-field class="example-full-width">
+          <input matInput
+                 placeholder=" בעזרת הרשימה בחר מוצר"
+                 aria-label="alias"
+                 #aliasInput
+                 [matAutocomplete]="auto"
+                 [formControl]="aliasCtrl"
+                 [(ngModel)]="textP"
+                 (keydown)="onKeydown($event)"
+                 >
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)='addItem($event.option.value)' [displayWith]="displayNull" >
+            <mat-option *ngFor="let a of filteredAlias | async" [value]="a.TextAlias" >
+              -->
+    
+              <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+              
+              <!-- <span>{{a.TextAlias}}</span> -->
+              <!-- <small>Population: {{state.population}}</small> -->
+            <!-- </mat-option>
+          </mat-autocomplete>
+        </mat-form-field> -->
+        <!-- עד כאן השלמה אוטומטית -->
+    
+        <br>
+        </form>
+    
+</div>
+
+
+

@@ -1,0 +1,83 @@
+
+<!-- <ul>
+  <li *ngFor="let item of arrShop">{{item.NameShop}}</li>
+</ul> -->
+
+
+
+<!-- <div class="example-container" [class.mat-elevation-z2]="!isActive"  [class.mat-elevation-z8]="isActive"> -->
+<!-- <div style="background-image: url('./assets/images/patern.jpg'); background-color: deeppink" style=" width:100%; height:50vh;"></div> -->
+<!-- <div style="background-image: url('./assets/home/up.png'); background-repeat: space; width:100%; height:50vh;" > -->
+  <!-- <div style="width: 100%; height: 100%;" class="parent"> 
+    <img src="./assets/home/up.png" style="width: 100%; height: 100%">
+    <img src="./assets/home/sacit.png" style=" height: auto; max-height: 100%" class="child center2">
+  </div> -->
+  <div class="wrapper" >
+    <img class="big-img" src="./assets/home/up.png" />
+    <img class="small-img" src="./assets/home/sacit.png"  />
+  </div>
+  
+<!-- </div> -->
+
+<div class="parent" style="background-color: orange; width:100%; height: 35vh;     padding: 5%;">
+  <form class="example-form child" dir="rtl" >
+          <h3 class="font" style="text-align: center; color: white">ספר לנו, איפה אתה נמצא?</h3>  
+      <mat-form-field class="example-full-width font" color="warn">
+        <input matInput
+        color="defult"      
+               placeholder="בחר חנות"
+               aria-label="shop"
+               [matAutocomplete]="auto"
+               [formControl]="shopCtrl"
+               class="font"
+               [(ngModel)]="text">
+        <mat-autocomplete #auto="matAutocomplete" class="font"   (optionSelected)='selectShop($event.option.value)'>
+          <mat-option *ngFor="let shop of filteredShops | async" [value]="shop.NameShop"  >
+            <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+            <span class="font">{{shop.NameShop}}</span>
+            <!-- <small>Population: {{state.population}}</small> -->
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    <br>
+
+
+    <p class="center2">
+        <mat-checkbox class=" font" color="warn" ng-change=""
+     [ngModelOptions]="{standalone: true}" [(ngModel)]="isManage" style="float: right; color: white">הכנס כמנהל</mat-checkbox> 
+     <button mat-flat-button color="defult" (click)="enter()" class=" font" style="float: left">היכנס</button> 
+  
+    </p>
+
+
+  <p>
+      <!-- <button mat-flat-button color="warn" (click)="option()" class="center font">אפשרויות</button> -->
+       </p>  
+
+      </form>
+
+</div>
+
+
+  
+
+<!-- </div> -->
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+ 
+

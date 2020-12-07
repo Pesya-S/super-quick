@@ -1,0 +1,17 @@
+<h1 style="margin-left: auto; margin-right: auto; text-align: center" class="font" mat-dialog-title >איפה נמצא ה{{data.product.Alias.TextAlias}}</h1>
+<div>
+    <button  mat-button class="btn btn-warn font" (click)="onNoClick()">ביטול</button>
+  <button mat-button [mat-dialog-close]="data.numStand" class="font" cdkFocusInitial [disabled]="this.disChooseStand">שים בסטנד שבחרתי</button>
+    <canvas width="1000" height="1000"  #canvas (click)="draw($event)"  style="margin:0;padding:0;  border: deeppink" id="imgCanvas"
+class="canvasView">
+</canvas>
+    </div>
+    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>    <div mat-dialog-actions> -->
+
+  <!-- <button mat-raised-button
+  matTooltip="Info about the action"
+  matTooltipClass="example-tooltip-red"
+  aria-label="Button that shows a red tooltip"
+  class="example-button">
+Red-tooltip Action
+</button> -->

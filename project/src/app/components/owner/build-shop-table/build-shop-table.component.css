@@ -1,0 +1,9 @@
+td {
+    width: 10px;
+    height: 10px;
+    font-size:10%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif   
+}
+tr{
+    border: black
+}

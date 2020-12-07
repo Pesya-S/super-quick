@@ -1,0 +1,24 @@
+<!-- <p>customer works!</p> -->
+   <!-- <div style=" background-color: white"> -->
+   <!-- <div style="background-image: url('./assets/images/patern.jpg');height: 95vh; width: 95vw; background-color: white"> -->
+<body style="background-image:url('../assets/images/patern.jpg')">
+            <div class="praent" style="background-image:url('../assets/images/patern.jpg'); height:90vh; max-height: 100%">
+                <div class="row child" >
+        
+        
+                     
+                        <div class="col-lg-4 col-md-5 col-xs-12" style="padding: 4%" >
+                                <app-buying (onSelectPrduct)="inputProduct($event)" (toRestart)="restart()"  (toShowPath)="sendPath($event)"></app-buying>
+                        </div>    
+        
+                        <div class="col-lg-7 col-md-8 col-xs-12" style="padding: 4%;">
+                                <app-using-canvas (onSelectPoint)="inputPoint($event)" ></app-using-canvas>   
+                        </div>
+        
+                </div>
+        </div>    
+<!-- </div> -->
+
+   
+</body>
+ 

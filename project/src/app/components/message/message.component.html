@@ -1,0 +1,15 @@
+<body>
+   <div class="row center"  style="color: #f4a460;">
+      <h1 class="center font" style="font-size: 40px;" mat-dialog-title  style="padding: 4%">{{data.header}}</h1>
+  </div>
+
+
+  <div class="row center" mat-dialog-content >
+    <p class="center font" style="display: inline-block; font-size: 20px;"  >{{data.message}}</p>
+</div>
+<div class="row" mat-dialog-actions >
+  <button mat-button [mat-dialog-close]="data.message" class="font"  cdkFocusInitial>הבנתי</button>
+</div>
+</body>
+
+

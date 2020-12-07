@@ -1,0 +1,6 @@
+<input type="checkbox" [(ngModel)]="nearest">
+<table  #tableH border="2" id="tbl">
+    <tr *ngFor="let item of mat;let ind1=index" >  
+        <td *ngFor="let item1 of item;let ind=index" id=ind1*100+ind (mouseout)="unMoveTd(ind1,ind)" (mouseover)="MoveTd(ind1,ind)" (click)="clickTd(ind1,ind,$event)" [ngStyle]="{'background-color':arrColors[item1%10]}"   > </td>
+    </tr>
+</table>

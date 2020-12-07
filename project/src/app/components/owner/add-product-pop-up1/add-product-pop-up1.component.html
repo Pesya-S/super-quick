@@ -1,0 +1,85 @@
+<div style="height: 50%">
+<div style="margin-left: auto; margin-right: auto;">
+  <h2 style="margin-left: auto; margin-right: auto; text-align: center" mat-dialog-title >? רוצה להוסיף אותי לחנות</h2>
+  <!-- <div style="width: auto; height: 20vh; background-color: orange" class="parent"> -->
+    <div style="width: auto; max-width: 50vw; max-height: 20vh;" class="parent">
+   <img   #img  src=""  class="child" style="height: 10vh; width: auto;"  /> 
+  </div>
+    
+  </div>
+  
+    <br>
+<div class="row">
+  <!-- <input type="file"  class="font" (change)="handleFileSelect($event)" style="margin-left: auto; margin-right: auto; "  placeholder="בחר או גרור תמונה"  value="בחר תמונה..."  /> -->
+<label class="custom-file-upload btn btn-warning">
+    <input type="file" id="filePicker" class=" myFont font"  (change)="handleFileSelect($event)" />
+    <i class="font "></i> בחר תמונה
+</label>
+  <p style="margin-left: auto; margin-right: auto; text-align: right" class="font">{{data.p.Alias.TextAlias}} {{data.p.Alias.TextAlias}} {{data.p.Company}} {{data.p.Weight}}</p>
+
+</div>  
+
+
+<div mat-dialog-content dir="rtl" style="max-height: 40vh">
+
+<div style="height: 5vh; max-height: 5vh" >
+   <p style="margin-left: auto; margin-right: auto; text-align: right" class="font">קוראים לי גם :</p>
+
+  <ul class="w3-ul">
+    <li style="margin-left: auto; margin-right: auto; text-align: right" *ngFor="let x of data.p.ProductAlias; let i=index" >{{x.Alias.TextAlias}}<span (click)="removeItem(i)" style="cursor:pointer;" class="font w3-left w3-margin-right">×</span></li>
+  </ul>
+</div>
+ 
+
+  <div class="w3-container w3-light-grey w3-padding-16">
+      <div class="w3-row w3-margin-top">
+        <div class="w3-col s10">
+          <!-- השלמה אוטומטית -->
+<mat-form-field class="example-full-width font" >
+  <input matInput
+         placeholder="הזן כינוי"
+         aria-label="alias"
+         #aliasInput
+         [matAutocomplete]="auto"
+         [formControl]="aliasCtrl"
+         [(ngModel)]="textP"
+         >
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)='addItem($event.option.value)' [displayWith]="displayNull" >
+    <mat-option class="font" *ngFor="let a of filteredAlias | async" style="margin-left: auto; margin-right: auto; text-align: right" [value]="a.TextAlias" >
+      <!-- <img class="example-option-img" aria-hidden [src]="state.flag" height="25"> -->
+      <span>{{a.TextAlias}}</span>
+      <!-- <small>Population: {{state.population}}</small> -->
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>      
+<div class="parent">
+  <button (click)="findAndSelect()" class="child btn btn-warning font">הוסף כינוי למוצר</button> 
+
+</div>  
+
+<!-- עד כאן השלמה אוטומטית -->
+          <!-- <input placeholder="Add shopping items here" [(ngModel)]="addMe" class="w3-input w3-border w3-padding"> -->
+        <!-- <div class="w3-col s2">
+                   
+        </div> -->
+      </div>
+      <p class="w3-text-red">{{errortext}}</p>
+    </div>    
+          
+        </div>
+
+
+
+
+
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" class="font btn btn-warning">לא</button>
+  <button mat-button [mat-dialog-close]="data.dataResult" cdkFocusInitial class="font btn btn-warning">כן</button>
+</div>
+
+
+</div>
+

@@ -1,0 +1,86 @@
+ <!-- <p>add-shop works!</p>
+{{id}}
+name shop<input type="text" name="txtName" [(ngModel)]="s.NameShop" />
+<div>
+
+ <ul>
+    <li *ngFor="let item of arrFiltered">{{item.NameShop}}</li>
+</ul>
+</div>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<input type="button" value="to save" (click)="saveShop()"/>  -->
+
+
+
+<form class="" [formGroup]="addShopForm">
+        <div class="form-group">
+       <div style="background-image: url('./assets/images/patern.jpg');direction: rtl;height: 100vh;">
+         <div class="container">
+           <div class="row justify-content-center">
+             <div class="col-md-9 col-lg-12 col-xl-5">
+               <div style="background-color: #efe3ccde;;" class="card shadow-lg o-hidden border-0 my-5">
+                 <div class="card-body p-0">
+                   <div class="row">
+                     <div class="col-lg-12">
+                       <div class="p-5">
+                         <div class="text-center">
+                            <h4 class="text-dark mb-4 myFont" style="text-align: center">{{nameShop}} הוסף חנות</h4>
+                         </div>
+                         <form class="user">
+                                    <div class="form-group">
+                                   <!--     <mat-form-field class="col col-lg-12">
+                                            <input matInput placeholder="שם חנות" class="myFont" [formControl]="nameshopCtrl" [(ngModel)]="s.NameShop"/>                    
+                                            <mat-error *ngIf="nameshopCtrl.invalid">{{getErrorMessage('nameshopCtrl')}}</mat-error>                              
+                                        </mat-form-field>            
+                                        <mat-form-field class="col col-lg-12">
+                                            <input matInput placeholder="הקש סיסמא" class="myFont" [formControl]="passwordCtrl" [type]="hide ? 'password' : 'text'" [(ngModel)]="textPassword"/>
+                                            <mat-error *ngIf="passwordCtrl.invalid">{{getErrorMessage('passwordCtrl')}}</mat-error>
+                                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide passwordCtrl'" [attr.aria-pressed]="hide">
+                                            </button>
+                                        </mat-form-field>  -->
+                                        
+                                        
+                                        <!-- <mat-form-field class="col col-lg-12">
+                                            <input matInput placeholder="קובץ זמל"  [formControl]="xmlCtrl" [(ngModel)]="xml"/>
+                                            <mat-error *ngIf="xmlCtrl.invalid">{{getErrorMessage('xmlCtrl')}}</mat-error>                       
+                                        </mat-form-field> -->
+
+                                        <!-- <div class="form-group col col-lg-12">
+  
+                                            <input type="file"
+                                                   id="file"
+                                                   class="center myFont"
+                                                   >
+                                        </div> -->
+                                        
+
+                                        <label class="custom-file-upload">
+                                                <input type="file" class="center myFont" [formControl]="xmlCtrl" (change)="handleFileInput($event.target.files)" />
+                                                <i class="fa fa-cloud-upload"></i> העלה קובץ xml
+                                            </label>
+
+
+                                    </div>
+                        </form>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox small">
+                            </div>
+                        </div>
+
+                        <button [disabled]="addShopForm.invalid" (click)="saveShop();" style="background-color: #e47f0bc2; color: white; text-align: center" class="col col-lg-12 myFont" mat-raised-button color="warn">שמור</button>
+                        <hr> 
+                    </div>
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>   
+</form>  
+
+       
+    
+    

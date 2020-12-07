@@ -1,0 +1,97 @@
+<!-- <p>product-to-shop works!</p> -->
+
+
+<div style="background-image:url('../assets/images/patern.jpg'); ">
+<div style="background-color: rgba(255, 255, 255, 0.836);">
+
+
+<div class="w3-container" style="background: orange">
+
+
+  <!-- <div class="row w3-margin-top center2"> -->
+    <div class="row parent">
+<div class="child">
+<h1 class="font" style="text-align: center;">{{this.s.NameShop}}</h1>
+    <!-- <div class=""> -->
+   <!-- <button (click)="searchByBarcode()" class="w3-btn w3-padding w3-green">אישור</button>  -->
+ <!--  <mat-form-field class="" >
+      <mat-label class="font">חפש מוצר</mat-label>
+      <input matInput [(ngModel)]="barcode" [ngModelOptions]="{standalone: true}" value="">
+    </mat-form-field>
+     </div> -->
+
+    <!-- <div class=""> -->
+      <!--  <mat-form-field class="" >
+  <mat-label class="font">הקש קוד חנות</mat-label>
+  <input matInput [(ngModel)]="codeShop" class="font" [ngModelOptions]="{standalone: true}" value="">
+</mat-form-field>
+     </div> -->
+
+</div>
+  </div>
+ 
+
+
+<div class="row parent">
+      <mat-button-toggle-group class="font child" name="fontStyle" aria-label="Font Style" class="center">
+     <mat-button-toggle class="font" value="bold" (click)="setView('all')">הצג הכל</mat-button-toggle>
+     <mat-button-toggle class="font" value="italic" (click)="setView('selected')">הצג מוצרים נבחרים</mat-button-toggle>
+     <mat-button-toggle class="font" value="underline" (click)="setView('not')">הצג מוצרים שלא נבחרו</mat-button-toggle>
+   </mat-button-toggle-group>  
+</div>
+<div class="row parent">
+    <button type="button" (click)="save()" class="btn btn-warning font child " style="margin: 1%">שמור</button>
+</div>
+
+<!-- כאן נסגרת חתיכת הכותרת האפורה -->
+</div>
+
+
+<!-- <div class="btn-group centered" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary">Left</button>
+  <button type="button" class="btn btn-secondary">Middle</button>
+  <button type="button" class="btn btn-secondary">Right</button>
+</div> -->
+<!-- <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div> -->
+
+
+    <!-- <button   (click)="save()" style=" font-family: Tahoma" class="col col-lg-12 w3-orange font" mat-raised-button color="Orange">שמור</button> -->
+   
+
+<!-- רשימת מחלקות -->
+<!-- <mat-button-toggle-group name="fontStyle" style="float: right;" aria-label="Font Style" class="" dir="right" style="direction: rtl">
+    <mat-button-toggle value="bold" *ngFor="let item2 of departments; let i2=index" dir="rtl" style="direction: rtl" (click)="chooseDep(i2)"> {{item2.TextAlias}}</mat-button-toggle>
+   <mat-button-toggle value="bold" *ngFor="let item of department; let i=index" (click)="chooseDep(i)">{{i}} {{item}}</mat-button-toggle> 
+    </mat-button-toggle-group>  -->
+
+    <div class="w3-bar w3-orange2" style="direction: rtl; float: right">
+        <button style="direction: rtl; float: right" *ngFor="let item2 of departments; let i2=index" class="font w3-right w3-bar-item w3-button tablink"(click)="changeDep(i2,$event)">{{item2.TextAlias}}</button>
+        <!-- <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">Paris</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Tokyo</button> -->
+      </div>
+
+<!-- רשימת מוצרים -->
+    <!-- <div class="list-group">
+        <span type="button" class="list-group-item list-group-item-action" *ngFor="let item3 of this.departments[this.iDep].products; let i3=index" (click)="chooseProduct(i3)"><input type="checkbox">{{item3.Alias.TextAlias}}</span>
+      </div> -->
+      <button type="button" (click)="addProduct()" class="btn  btn-block font">הוסף מוצר למחלקה</button>
+      <mat-selection-list #list (selectionChange)="selectedChanged($event,i3)" ThemePalette="rgb(224, 131, 9)" >  
+            <mat-list-option class="font" style="text-align: right"  *ngFor="let item3 of curProducts; let i3=index"  color="warn" (click)="chooseProduct(i3,event)" ThemePalette="rgb(224, 131, 9)"  [selected]="[(item3.flag)]" > 
+             <!-- <mat-list-option class="font" style="text-align: right"  *ngFor="let item3 of curProducts; let i3=index"  color="warn" (click)="chooseProduct(i3,event)" ThemePalette="rgb(224, 131, 9)"  [selected]="item3.flag==true?'selected'" >  -->
+            {{item3.Alias.TextAlias}}
+          </mat-list-option>
+        </mat-selection-list>
+
+        <!-- <button (click)="funclick(3)">click me</button> -->             
+
+</div></div>
+<!-- כותרת -->

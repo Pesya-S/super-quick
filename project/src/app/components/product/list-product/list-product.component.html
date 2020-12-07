@@ -1,0 +1,11 @@
+<p>list-product works!</p>
+ <img  style="border: 5" #img />
+<ul>
+    <li *ngFor="let item of arrProduct; let i=index">
+        {{item.Alias.TextAlias}} {{i}}     
+        <img bind-src="this.arrProduct[165].Src">
+    </li>
+</ul>
+
+
+

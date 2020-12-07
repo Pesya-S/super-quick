@@ -1,0 +1,26 @@
+<p>to-delete3 works!</p>
+<!-- <form #imageForm=ngForm (ngSubmit)="OnSubmit(Image)">
+
+  <img [src]="imageUrl" class="imgArea">
+  <div class="image-upload">
+      <label for="file-input">
+          <img src="upload.jpg" />
+      </label>
+<img src=""/>  
+      <input id="file-input" #Image type="file" (change)="handleFileInput($event.target.files)" />
+      <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid"><i
+              class="material-icons">save</i></button>
+  </div>
+</form> -->
+<div>
+    <div>
+        <label for="filePicker">Choose or drag a file:</label><br>
+        <input type="file" id="filePicker" (change)="handleFileSelect($event)">
+    </div>
+    <br>
+    <div>
+        <h1>Base64 encoded version</h1>
+        <textarea id="base64textarea" placeholder="Base64 will appear here" cols="50" rows="15" >{{base64textString}}</textarea>
+        <img  style="border: 5" #img  src=""/>
+    </div>
+</div>

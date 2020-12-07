@@ -1,0 +1,8 @@
+<p>view-shop works!</p>
+<table border="0">
+    <tr *ngFor="let item of mat;let ind1=index" >  
+        <td *ngFor="let item1 of item;let ind=index" (click)="func(ind1,ind)" [ngStyle]="{'background-color':arrColor[item1%10]}"  >
+        </td>
+    </tr>
+</table>
+

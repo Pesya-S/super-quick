@@ -1,0 +1,28 @@
+<p>list-shop works!</p>
+<input type="button" (click)="go()" value="goooooooooo" />
+<ul>
+    <li *ngFor="let item of arrShop">{{item.NameShop}}</li>
+</ul>
+
+<form class="autoCompleteShops">
+    <div class="example-full-width">
+   <input matInput placeholder="shop" aria-label="shop" [matAutocomplete]="auto" [formControl]="shopCtrl" /> 
+   
+       <mat-autocomplete #auto="matAutocomplete">
+         <mat-option *ngFor="let shop of filteredShops | async" [value]="shop.NameShop">
+           <!-- <img class="example-option-img" aria-hidden [src]="shop.Code" height="25"> -->
+           <span style="background-color:yellow">{{shop.NameShop}}</span>
+           <!-- <small></small> -->
+         </mat-option>
+       </mat-autocomplete> 
+     </div>
+   
+     <br>
+    
+     <!-- <mat-slide-toggle
+       [checked]="shopCtrl.disabled"
+       (change)="shopCtrl.disabled ? shopCtrl.enable() : shopCtrl.disable()">
+       Disable Input?
+     </mat-slide-toggle>  -->
+   </form>
+   

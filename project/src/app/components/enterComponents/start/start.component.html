@@ -1,0 +1,39 @@
+<mat-toolbar  md-colors="{background: '#FF9800'}" color=warn style="background-color: orange; color: orange; width: 100vw; max-width: 100vw; height: 10vh;;" >
+  <span>
+   
+     <img src="./assets/logo.png" width="30%" height="auto" style="padding: 10px">
+  </span>
+
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space">
+
+  </span>
+      
+  <span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" >
+      <img src="./assets/icon/buy.png" height="30vh" width="auto">
+      <span></span>
+    </button>
+
+
+    <mat-menu #menu="matMenu" >
+      <button mat-menu-item (click)="goHome()" style="padding: 2px;">
+          <img src="./assets/icon/home.png" height="30vh" width="auto">
+        <span class="font" style="text-align: right;">דף הבית</span>
+      </button>
+      <button mat-menu-item  (click)="addNewShop()" style="padding: 2px;">
+          <img src="./assets/icon/new.png" height="30vh" width="auto">
+        <span class="font" style="text-align: right;">חנות חדשה</span>
+      </button>
+      <button mat-menu-item disabled style="padding: 2px;">
+          <img src="./assets/icon/call.png" height="30vh" width="auto">
+        <span class="font" style="text-align: right;">דבר איתנו</span>
+      </button>
+    </mat-menu>
+</span>
+<span style="padding:1px"></span>
+</mat-toolbar>
+<router-outlet routerLink="home"></router-outlet> 
+<!-- <app-home></app-home> -->

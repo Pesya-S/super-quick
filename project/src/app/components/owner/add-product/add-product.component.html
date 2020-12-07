@@ -1,0 +1,71 @@
+
+<form class="example-form" [formGroup]="add_productForm">
+    <!-- <div class="form-group">
+     <div class="container">
+       <div class="row justify-content-center">
+             <div class="card-body p-0">
+               <div class="row"> -->
+                     <div class="center text-center">
+                        <h1 style=" text-align: center"  mat-dialog-title >הוספת מוצר</h1>
+                        <h2 style=" text-align: center" mat-dialog-title >  מחלקת {{this.data.Dep.TextAlias}}</h2>
+
+                       <!-- <h4 class="text-dark mb-4" style="text-align: center"> הוסף מוצר</h4> -->
+                     </div>
+                     <div class="parent " style="">
+                      <button [disabled]="add_productForm.invalid" (click)="saveProduct();" style="background-color: orange;" class="child" mat-raised-button color="warn" >הוסף</button>
+                     </div>
+                     <form class="user">
+                       <div class="form-group">
+
+                         <mat-form-field class="row" style="display: block">
+                           <input matInput placeholder="ברקוד" [(ngModel)]="p.Barcode"  [formControl]="barcdoeCtrl"/>
+                           <mat-error *ngIf="barcdoeCtrl.invalid">{{getErrorMessage('barcdoeCtrl')}}</mat-error>
+                         </mat-form-field>
+
+                         <mat-form-field class="row" style="display: block"> 
+                            <input matInput placeholder="שם" [(ngModel)]="p.Alias.TextAlias"  [formControl]="productNameCtrl" />
+                            <mat-error *ngIf="productNameCtrl.invalid">{{getErrorMessage('productNameCtrl')}}</mat-error>
+                          </mat-form-field>
+
+                         <mat-form-field class="row" style="display: block">
+                            <input matInput placeholder="חברה" [(ngModel)]="p.Company"  [formControl]="companyCtrl" />
+                            <mat-error *ngIf="companyCtrl.invalid">{{getErrorMessage('companyCtrl')}}</mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field class="row" style="display: block">
+                            <input matInput placeholder="משקל" [(ngModel)]="p.weight"  [formControl]="weightCtrl" />
+                            <mat-error *ngIf="weightCtrl.invalid">{{getErrorMessage('weightCtrl')}}</mat-error>
+                          </mat-form-field>  <!-- -->
+
+
+                          <div class="row" style="display: block">
+                            <input type="file" id="filePicker" (change)="handleFileSelect($event)" placeholder="בחר או גרור תמונה"   [formControl]="srcCtrl" />
+                            <mat-error *ngIf="srcCtrl.invalid">{{getErrorMessage('srcCtrl')}}</mat-error>
+                           
+
+                          </div>
+
+ <div style="width: auto; max-width: 50vw; max-height: 10vh;" class="parent">
+                              <img   #img  src=""  class="child" style="max-height: 10vh; width: auto;"  /> 
+                             </div>
+
+
+
+                      
+               </div>                      
+                     </form>
+
+             <!-- </div>
+                 
+             </div>
+           </div>
+         </div>
+     </div> -->
+
+
+
+<!-- <div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.p" cdkFocusInitial>Ok</button>
+</div> -->
+</form>

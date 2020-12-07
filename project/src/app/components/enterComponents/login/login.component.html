@@ -1,0 +1,55 @@
+<form class="" [formGroup]="loginForm">
+ <div class="">
+<div style="background-image: url('./assets/images/patern.jpg');direction: rtl;height: 100vh;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-9 col-lg-12 col-xl-5">
+        <div style="background-color:#efe3ccde;" class="card shadow-lg o-hidden border-0 my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="myFont font" style="text-align: center; color: orange">ברוך הבא!</h1>
+                    <h4 class="text-dark mb-4 myFont font" style="text-align: center">{{nameShop}}</h4>
+                    <h6 class="myFont font" style="text-align: center; color: gray" >הקש סיסמא</h6>
+                  </div>
+                  <form class="user">
+                    <div class="">
+                      <mat-form-field class="col col-lg-12">
+                        <input matInput placeholder="סיסמה"  class="myFont font" [(ngModel)]="textPassword" [formControl]="password" [type]="hide ? 'password' : 'text'"/><!--  [(ngModel)]="textPassword"-->
+                        <mat-error *ngIf="password.invalid">{{getErrorMessage('password')}}</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                          [attr.aria-pressed]="hide">
+                         <!--  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+                        </button>
+                      </mat-form-field>
+                    </div>
+                    <div class="">
+                      <!-- <div class="custom-control custom-checkbox small">
+                        <div class="form-check"><input class="form-check-input custom-control-input" type="checkbox"
+                            id="formCheck-1"><label class="form-check-label custom-control-label"
+                            for="formCheck-1">Remember Me</label></div>
+                      </div>-->
+                    </div> 
+                    <button [disabled]="loginForm.invalid" (click)="goToHome();" style="background-color: #e9a11dc2; text-align: center" class="col col-lg-12 myFont font" mat-raised-button color="warn">ערוך חנות</button>
+                    <hr>
+                  </form>
+                  <!-- <div class="text-center"><a class="small" href="home.html">שכחת סיסמה?</a></div>
+                  <div class="text-center">עדין אין לך חשבון?<a class="small" href="register.html">צור עכשיו!</a></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div>
+</div>  -->
+
+<!-- </form> -->
+
+
+  

@@ -1,0 +1,77 @@
+
+
+ <div class="w3-container" style="padding: 5%;">
+            <!-- <h1>state: {{state}} level: {{level}}</h1> -->
+
+    <div class="row">
+                שם חנות<input type="text" [(ngModel)]=this.childTable.shop.NameShop name="nameShop" >
+    </div>
+    <div class="row">
+                ססמא<input type="text" [(ngModel)]=this.childTable.shop.Password name="Password" >
+    </div> 
+    <div>
+            <button (click)="add()">אישור</button>
+        <button (click)="saveShop1()">שמור</button>
+        <button (click)="delPoint()">איתחול נקודות</button>     
+    </div>
+      
+</div>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold" (click)="chooseSub('w')">הוספת קירות</mat-button-toggle>
+    <mat-button-toggle value="italic" (click)="chooseSub('s')">הוספת סטנדים</mat-button-toggle>
+    <mat-button-toggle value="underline" (click)="chooseSub('g')">הוספת שערים</mat-button-toggle>
+  </mat-button-toggle-group>   
+<div (keydown)="onKeydown($event)">
+   <app-build-shop-table ></app-build-shop-table>      
+</div>
+<p>{{textMessage}}</p>
+   
+        <!-- <table #tableHead border=2> 
+        <tr>
+        <td *ngFor="let item1 of mat[0];let ind=index" style='background-color:rgb(10, 255, 235) '   >{{ind}}</td>            
+        </tr>
+        </table> -->
+   
+
+
+
+    <!-- <div class="col-*-*">
+        <app-add-stand></app-add-stand>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- code alias<input type="text" [(ngModel)]=codeAlias > -->
+
+<!--
+<div>p1:
+    <p>x <input type="text" [(ngModel)]=p1.X >
+    y<input type="text" [(ngModel)]=p1.Y ></p>
+</div>
+<div>p2:
+    <p>x <input type="text" [(ngModel)]=p2.X >
+    y<input type="text" [(ngModel)]=p2.Y ></p>
+</div>
+
+ <table  #tableH border="2" id="tbl">
+        <tr *ngFor="let item of copyMat;let ind1=index" >  
+            <td *ngFor="let item1 of item;let ind=index" id=ind1*100+ind  [ngStyle]="{'background-color':arrColors[item1%10]}"   >
+            </td>
+        </tr>
+    </table> -->
+
+
+
+
